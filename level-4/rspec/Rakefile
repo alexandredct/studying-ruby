@@ -1,0 +1,30 @@
+begin
+  require 'rspec/core/rake_task'
+  #doc https://www.rubydoc.info/github/rspec/rspec-core/RSpec/Core/RakeTask
+
+  task default: [
+    :test_year,
+    :test_name
+  ]
+
+  task :test_year do
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      #TODO call lines 16, 23, 28..33
+      t.pattern = 'user_spec-5.rb'
+      t.rspec_opts = "--format doc"
+    end
+    Rake::Task["spec"].execute
+  end
+
+  task :test_name do
+    RSpec::Core::RakeTask.new(:spec) do |t|
+      #TODO call lines 13, 22
+      t.pattern = 'user_spec-5.rb'
+      t.verbose = false
+    end
+    Rake::Task["spec"].execute
+  end
+
+rescue => e
+  puts e
+end
