@@ -28,6 +28,3 @@ a = Member.new("Maria")
 greetings.call(a.name)
 
 a.first_steps(message)
-
-
-
