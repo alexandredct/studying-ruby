@@ -37,7 +37,7 @@ describe User do
     #other built in matchers https://relishapp.com/rspec/rspec-expectations/v/3-5/docs/built-in-matchers
   end
 
-  #using context to group "it" / "examples"" / "specify""
+  #using context to group "it" / "example"" / "specify" tests
   context "born in 2001" do
     it "is not born in a leap year" do
       user = User.new("Francisca", "2001-01-01")
@@ -53,7 +53,7 @@ describe User do
   end
 
   context "born in 2000" do
-    it "is born in a leap year" do
+    example "is born in a leap year" do
       user = User.new("Francisca", "2000-01-01")
       expect(user).to be_born_in_leap_year
     end
